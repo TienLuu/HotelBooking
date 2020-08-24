@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Hotel',
+    'frontend_app',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# AUTH_USER_MODEL = 'YourAppName.YourClassName'
+AUTH_USER_MODEL = 'Hotel.User'
 
 
 # Internationalization

@@ -1,0 +1,10 @@
+ {% extends "Hotel/layout.html" %} 
+ {% load static %} 
+
+{% comment %}{% block script %}
+<script src="{% static 'Hotel/post.js' %}"></script> 
+{% endblock %}{% endcomment %}
+
+{% block body %}
+  Hello {{user.username}}
+{% endblock %}

@@ -1,0 +1,36 @@
+{
+  "name": "HotelBooking",
+  "version": "1.0.0",
+  "description": "Project on booking hotel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --watch ./HotelBooking/frontend_app/src/index.js --output ./HotelBooking/frontend_app/static/frontend_app/main.js",
+    "build": "webpack --mode production ./HotelBooking/frontend_app/src/index.js --output ./HotelBooking/frontend_app/static/frontend_app/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TienLuu/HotelBooking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TienLuu/HotelBooking/issues"
+  },
+  "homepage": "https://github.com/TienLuu/HotelBooking#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

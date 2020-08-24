@@ -14,10 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from django.views.generic import TemplateView
+from django.urls import include, path
+from django.conf.urls import url
+from django.conf import settings
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='index.html')),
+
+    path('front/', TemplateView.as_view(template_name='index.html')),
+    path('', include('frontend_app.urls')),
+    path('hotel/', include('Hotel.urls')),
+
+
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url('frontend/build/static/media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        })
+    ]
