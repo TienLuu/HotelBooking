@@ -10,6 +10,7 @@ import json
 
 from .models import *
 
+
 # Create your views here.
 
 
@@ -67,3 +68,22 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "Hotel/register.html")
+
+
+@login_required
+def hotels(request):
+    # if section == "all":
+    #     posts = Post.objects.order_by("-timestamp").all()
+    # elif section == "profile":
+    #     posts = Post.objects.filter(
+    #         user=request.user).order_by("-timestamp").all()
+    # elif section == "following":
+    #     posts = []
+    #     for follower in request.user.followers.all():
+    #         for post in Post.objects.filter(user=follower).order_by("-timestamp").all():
+    #             posts.append(post)
+    # else:
+    #     return HttpResponse(status=404)
+    # posts = posts.order_by("-timestamp").all()
+    hotels = Hotel.objects.all()
+    return JsonResponse([hotel.serialize() for hotel in hotels], safe=False)

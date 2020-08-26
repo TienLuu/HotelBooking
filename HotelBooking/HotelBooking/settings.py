@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Hotel',
+    'django_cleanup.apps.CleanupConfig',
     'frontend_app',
 ]
 

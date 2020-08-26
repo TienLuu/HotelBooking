@@ -13,4 +13,5 @@ urlpatterns = [
     path("register", views.register, name="register"),
 
     # api routes
+    path("api/hotels", views.hotels, name="hotels")
 ]
